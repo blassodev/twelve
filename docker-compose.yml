@@ -1,0 +1,52 @@
+services:
+  prisma:
+    image: prismagraphql/prisma
+    restart: always
+    ports:
+      - '4466:4466'
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            user: prisma
+            password: prisma
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./server:/twelve-api
+      - /twelve-api/node_modules
+    ports:
+      - '4000:4000'
+    env_file:
+      - ./.env
+    environment:
+      - NODE_ENV=development
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./client:/twelveClient
+      - /twelveClient/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+volumes:
+  postgres: ~
