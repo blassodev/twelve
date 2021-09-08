@@ -3,6 +3,8 @@ WORKDIR /twelveClient
 
 COPY ./package*.json ./
 RUN npm install
+RUN chown -R node.node /twelveClient
+
 COPY . .
 
 CMD ["npm","start"]
