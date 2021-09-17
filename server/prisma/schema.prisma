@@ -10,5 +10,5 @@ datasource db {
 model users {
   email    String @id @db.VarChar(320)
   username String @db.VarChar(32)
-  password String @db.VarChar(128)
+  pasword  String @db.VarChar(128)
 }
