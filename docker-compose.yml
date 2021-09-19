@@ -25,8 +25,8 @@ services:
       context: ./client
       dockerfile: Dockerfile.dev
     volumes:
-      - ./client:/twelveClient
-      - /twelveClient/node_modules
+      - ./client:/usr/src/twelveClient
+      - /usr/src/twelveClient/node_modules
     ports:
       - '3000:3000'
     environment:
