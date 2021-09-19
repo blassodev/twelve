@@ -10,9 +10,6 @@ datasource db {
 model users {
   email    String @id @db.VarChar(320)
   username String @db.VarChar(32)
-<<<<<<< HEAD
   password String @db.VarChar(128)
-=======
-  pasword  String @db.VarChar(128)
->>>>>>> bacfc6344fe092dd3fc42ce37a11f8ee7f8ce840
+
 }
