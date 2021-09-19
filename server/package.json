@@ -4,17 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+    "start": "NODE_PATH=./dist node dist/index.js",
+    "build": "tsc -p .",
+    "dev": "nodemon src/index.ts",
+    "devNo": "ts-node src/index.ts"
+>>>>>>> bacfc6344fe092dd3fc42ce37a11f8ee7f8ce840
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.9.2",
+<<<<<<< HEAD
     "prisma": "^3.0.2",
     "ts-node": "^10.2.1",
     "tslint": "^5.12.1",
     "typescript": "^3.9.10"
+=======
+    "nodemon": "^2.0.12",
+    "prisma": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+>>>>>>> bacfc6344fe092dd3fc42ce37a11f8ee7f8ce840
   },
   "dependencies": {
     "@prisma/client": "^3.0.2"
