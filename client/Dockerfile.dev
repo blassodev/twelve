@@ -1,5 +1,5 @@
-FROM node:alpine
-WORKDIR /usr/src/twelveClient
+FROM node
+WORKDIR /twelveClient
 
 COPY ./package*.json ./
 RUN npm install
