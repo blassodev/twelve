@@ -9,8 +9,15 @@ const Login: FC = () => {
     }
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='username'/>
-            <input type="password" placeholder='password'/>
+            <input 
+            placeholder='username' 
+            onChange= {e =>{setUsername(e.target.value)}} 
+            value={username}/>
+            <input 
+            type="password" 
+            placeholder='password' 
+            onChange= {e =>{setPassword(e.target.value)}} 
+            value={password}/>
             <button>Login</button>
 
         </form>
